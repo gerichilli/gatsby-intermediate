@@ -1,0 +1,8 @@
+node_modules/
+.cache/
+public
+bash.exe.stackdump
+yarn-error.log
+
+# Local Netlify folder
+.netlify

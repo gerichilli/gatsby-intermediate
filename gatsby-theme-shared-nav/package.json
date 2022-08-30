@@ -1,0 +1,8 @@
+{
+    "name": "gatsby-theme-shared-nav",
+    "version": "1.0.0",
+    "license": "MIT",
+    "peerDependencies": {
+        "gatsby": "3.11.0"
+    }
+}
