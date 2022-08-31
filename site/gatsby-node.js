@@ -68,7 +68,7 @@ exports.createPages = async ({ actions, graphql }) => {
   // createPage(pageObject, plugin, actionOptions)
   createPage({
     path: '/custom', // Any valid URL. Must start with a forward slash (/)
-    component: require.resolve('./src/templates/custom.js'), // absolute path to the component for this page
+    component: require.resolve(`${__dirname}/src/templates/custom.js`), // absolute path to the component for this page
     context: {
       // data for page, passed as props to the component this.props.pageContext
       title: 'Gatsby Site',
@@ -98,7 +98,7 @@ exports.createPages = async ({ actions, graphql }) => {
     if (!book.series) {
       createPage({
         path: `/book/${bookSlug}`,
-        component: require.resolve('./src/templates/book.js'),
+        component: require.resolve(`${__dirname}/src/templates/book.js`),
         context: {
           id: book.id,
         },
@@ -107,7 +107,7 @@ exports.createPages = async ({ actions, graphql }) => {
       const seriesSlug = slugify(book.series, { lower: true });
       createPage({
         path: `/book/${seriesSlug}/${bookSlug}`,
-        component: require.resolve('./src/templates/book.js'),
+        component: require.resolve(`${__dirname}/src/templates/book.js`),
         context: {
           id: book.id,
         },

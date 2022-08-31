@@ -173,18 +173,18 @@ const HomePage = ({data}) => {
 
 ## Setup Gastby Theme
 
-1. Create theme folder
+### 1. Create theme folder
 
 - Create `gatsby-config.js`
 - Create `package.json` and add some information
 
-2. Install gatsby in peerDependencies of theme
+### 2. Install gatsby in peerDependencies of theme
 
 ```
 yarn workspace gatsby-theme-shared-nav add -P gatsby@x.xx.x
 ```
 
-3. Install theme into site
+### 3. Install theme into site
 
 ```
 yarn workspace site add gatsby-theme-shared-nav@"*"
@@ -192,7 +192,7 @@ yarn workspace site add gatsby-theme-shared-nav@"*"
 
 - @"\*": get it to pickup a local theme
 
-4. Create a layout
+### 4. Create a layout
 
 - Create styles and layout component
 - Install `gatsby-plugin-layout` to theme [Docs](https://www.gatsbyjs.com/plugins/gatsby-plugin-layout/#gatsby-plugin-layout)
@@ -224,6 +224,27 @@ plugins: [
     'gatsby-theme-shared-nav',
 ],
 ```
+
+### 5. Creating a file in your site to make it overwrite theme folder
+
+- [Shadowing in Gatsby themes](https://www.gatsbyjs.com/docs/how-to/plugins-and-themes/shadowing/)
+
+1. In site's src folder create a folder (with name of the theme) to containt overwritting files
+2. Treat the files / folders with same name as if it was the source folder
+
+## Create a client-only dynamic page, store the query in navigate
+
+- [Explains](https://frontendmasters.learnwithjason.dev/intermediate-gatsby/client-only-routes)
+
+1. Create dynamic page folder in `src/pages`, its name is `[...].js`
+2. The params props is the path name of dynamic page
+
+   ```
+   export default function SearchClientOnly({ params }) {
+   const query = decodeURIComponent(params['*']);
+   // do something
+   }
+   ```
 
 ## Other tools and resouces
 
