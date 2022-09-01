@@ -10,6 +10,8 @@
   - [reateRemoteFileNode](#reateremotefilenode)
 - [Working With Custom Data](#working-with-custom-data)
 - [Setup Gastby Theme](#setup-gastby-theme)
+- [Create a client-only dynamic page, store the query in navigate](#create-a-client-only-dynamic-page-store-the-query-in-navigate)
+- [Serverless functions](#serverless-functions)
 
 ## Gatsby APIs
 
@@ -245,6 +247,30 @@ plugins: [
    // do something
    }
    ```
+
+## Serverless functions
+
+- [Gatsby Functions](https://www.gatsbyjs.com/docs/reference/functions/getting-started/)
+- Save Gatsby Functions in `src/api/*` (are mapped to function routes like files in `src/pages/*` become pages)
+
+  ```
+  export default function handler(req, res) {
+    res.status(200).json({ message: 'Hello World' });
+  }
+  ```
+
+## Deploying to Netlify
+
+1. In deployed site, create `netlify.toml`
+
+   ```
+   [build]
+       command = "yarn workspace site build"
+       publish = "public"
+       environment = { NETLIFY_USE_YARN = "true" }
+   ```
+
+2. Install `gatsby-plugin-netlify` `yarn workspace site add gatsby-plugin-netlify`
 
 ## Other tools and resouces
 

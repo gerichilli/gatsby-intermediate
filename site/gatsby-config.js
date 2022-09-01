@@ -10,6 +10,10 @@ module.exports = {
         label: 'Authors',
         path: '/authors',
       },
+      {
+        label: 'Dashboard',
+        path: '/account',
+      },
     ],
   },
   plugins: [
@@ -17,5 +21,6 @@ module.exports = {
     'gatsby-plugin-image',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
+    'gatsby-plugin-netlify',
   ],
 };
