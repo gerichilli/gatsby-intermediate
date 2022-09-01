@@ -12,6 +12,8 @@
 - [Setup Gastby Theme](#setup-gastby-theme)
 - [Create a client-only dynamic page, store the query in navigate](#create-a-client-only-dynamic-page-store-the-query-in-navigate)
 - [Serverless functions](#serverless-functions)
+- [Deploying to Netlify](#deploying-to-netlify)
+- [Environment Variables](#environment-variables)
 
 ## Gatsby APIs
 
@@ -271,6 +273,16 @@ plugins: [
    ```
 
 2. Install `gatsby-plugin-netlify` `yarn workspace site add gatsby-plugin-netlify`
+
+## Environment Variables
+
+- `GATSBY_PUBLIC_VALUE`: expose to client side
+- `SECRET_VALUE`: not expose to client side
+
+### Set Environment Variables by Netlify Cli
+
+- `ntl env:set GATSBY_PUBLIC_VALUE thisisoktoshare`
+- `ntl env:set SECRET_VALUE thisissecret`
 
 ## Other tools and resouces
 
